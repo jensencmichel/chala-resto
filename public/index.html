@@ -2,18 +2,19 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("js")</script>
+  <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")</script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chala | Cuisine antillaise et haïtienne à Rivière-des-Prairies, Montréal</title>
-  <meta name="description" content="Marché et Resto Chala : griot, tassot cabrit, diri djondjon, lambi, bannann peze. La vraie cuisine haïtienne à Rivière-des-Prairies, Montréal. Commandez pour emporter ou en livraison." />
-  <meta property="og:title" content="Chala | Le goûter antillais" />
-  <meta property="og:description" content="Griot, tassot, diri djondjon, lambi. Le goût d'Haïti à Rivière-des-Prairies." />
+  <title>Chala | Cuisine haïtienne à Rivière-des-Prairies, Montréal</title>
+  <meta name="description" content="Marché et Resto Chala : griot, tassot cabrit, diri djondjon, lambi, bannann peze. Cuisine haïtienne à Rivière-des-Prairies, Montréal. Pour emporter ou en livraison." />
+  <meta property="og:title" content="Chala, cuisine antillaise" />
+  <meta property="og:description" content="Griot, tassot, diri djondjon, lambi. Cuisine haïtienne à Rivière-des-Prairies." />
   <meta property="og:image" content="/img/og.jpg" />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#1a2323" />
+  <meta name="theme-color" content="#1f2a2a" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="preload" href="/fonts/bowlby-one.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/bungee-inline.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/bungee-shade.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles.css" />
   <script type="application/ld+json">
   {
@@ -21,18 +22,11 @@
     "@type": "Restaurant",
     "name": "Marché et Resto Chala",
     "alternateName": "Chala le goûter antillais",
-    "servesCuisine": ["Haïtienne", "Antillaise", "Caribéenne"],
+    "servesCuisine": ["Haïtienne", "Antillaise"],
     "telephone": "+1-514-588-3708",
     "priceRange": "$$",
     "image": "/img/og.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "11866 boulevard Rivière-des-Prairies",
-      "addressLocality": "Montréal",
-      "addressRegion": "QC",
-      "postalCode": "H1C 1P9",
-      "addressCountry": "CA"
-    },
+    "address": { "@type": "PostalAddress", "streetAddress": "11866 boulevard Rivière-des-Prairies", "addressLocality": "Montréal", "addressRegion": "QC", "postalCode": "H1C 1P9", "addressCountry": "CA" },
     "geo": { "@type": "GeoCoordinates", "latitude": 45.6499222, "longitude": -73.5610249 },
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "11:00", "closes": "19:00" },
@@ -45,218 +39,165 @@
   </script>
 </head>
 <body>
-  <!-- Grain -->
-  <svg class="grain" aria-hidden="true"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+  <a class="skip" href="#menu">Aller au menu</a>
 
-  <!-- Preloader -->
-  <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader__inner">
-      <span class="loader__script">Byenveni lakay</span>
-      <div class="loader__word">
-        <span>C</span><span>H</span><span>A</span><span>L</span><span>A</span>
+  <!-- ============ HERO : enseigne peinte ============ -->
+  <header class="sign" id="top">
+    <div class="bunting" aria-hidden="true" data-bunting></div>
+
+    <nav class="bar" aria-label="Navigation principale">
+      <a class="lockup" href="#top" aria-label="Chala, retour en haut">
+        <span class="lockup__script">Marché et Resto</span>
+        <span class="lockup__name">Chala</span>
+      </a>
+      <div class="bar__links">
+        <a href="#plats">Nos plats</a>
+        <a href="#menu">Menu</a>
+        <a href="#visite">Nous trouver</a>
       </div>
-      <svg class="loader__brush" viewBox="0 0 600 80" preserveAspectRatio="none"><path d="M10 60 C 160 30, 360 20, 590 12" /></svg>
-    </div>
-    <div class="loader__panel loader__panel--blue"></div>
-    <div class="loader__panel loader__panel--red"></div>
-  </div>
-
-  <!-- Nav -->
-  <header class="nav" id="nav">
-    <a href="#top" class="nav__logo" aria-label="Chala, accueil">
-      <span class="nav__logo-script">Marché et Resto</span>
-      <span class="nav__logo-word">CHALA</span>
-    </a>
-    <nav class="nav__links" aria-label="Navigation principale">
-      <a href="#histoire">Notre histoire</a>
-      <a href="#plats">Nos plats</a>
-      <a href="#menu">Menu</a>
-      <a href="#visite">Nous trouver</a>
+      <div class="bar__cta">
+        <a class="phone" href="tel:+15145883708">514 588-3708</a>
+        <a class="btn btn--yellow" href="https://www.ubereats.com/ca/store/chala-le-gouter-antillais/BpYQt7rVVE6Tbn0yuZUxeQ" target="_blank" rel="noopener">Commander</a>
+      </div>
     </nav>
-    <div class="nav__actions">
-      <span class="status" id="status"><i></i><b>Horaire</b></span>
-      <a class="btn btn--red magnetic" href="https://www.ubereats.com/ca/store/chala-le-gouter-antillais/BpYQt7rVVE6Tbn0yuZUxeQ" target="_blank" rel="noopener">Commander</a>
-      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
+
+    <div class="sign__body">
+      <p class="sign__script">Marché et Resto</p>
+      <h1 class="sign__word" aria-label="Chala">
+        <span class="ltr" aria-hidden="true"><span class="layer layer--back">C</span><span class="layer layer--shade">C</span><span class="layer layer--face">C</span></span>
+        <span class="ltr" aria-hidden="true"><span class="layer layer--back">H</span><span class="layer layer--shade">H</span><span class="layer layer--face">H</span></span>
+        <span class="ltr" aria-hidden="true"><span class="layer layer--back">A</span><span class="layer layer--shade">A</span><span class="layer layer--face">A</span></span>
+        <span class="ltr" aria-hidden="true"><span class="layer layer--back">L</span><span class="layer layer--shade">L</span><span class="layer layer--face">L</span></span>
+        <span class="ltr" aria-hidden="true"><span class="layer layer--back">A</span><span class="layer layer--shade">A</span><span class="layer layer--face">A</span></span>
+      </h1>
+
+      <div class="sign__foot">
+        <div class="sign__text">
+          <p class="sign__lead">Cuisine antillaise de Rivière-des-Prairies. Griot, tassot cabrit, diri djondjon et bannann peze, comme lakay.</p>
+          <div class="sign__actions">
+            <a class="btn btn--red btn--big" href="https://www.ubereats.com/ca/store/chala-le-gouter-antillais/BpYQt7rVVE6Tbn0yuZUxeQ" target="_blank" rel="noopener">Commander sur Uber Eats</a>
+            <a class="btn btn--line btn--big" href="#menu">Voir le menu</a>
+          </div>
+        </div>
+        <figure class="sign__photo">
+          <img src="/img/table-lakay.webp" alt="Table garnie de plats de Chala : riz collé, griot, poulet, diri djondjon et bananes pesées" width="1080" height="848" />
+          <figcaption class="sticker" id="sticker"><span>Horaire</span><small>du jour</small></figcaption>
+        </figure>
+      </div>
     </div>
   </header>
-  <div class="drawer" id="drawer">
-    <a href="#histoire">Notre histoire</a>
-    <a href="#plats">Nos plats</a>
-    <a href="#menu">Menu</a>
-    <a href="#visite">Nous trouver</a>
-    <a href="tel:+15145883708" class="drawer__tel">514 588-3708</a>
-  </div>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero__sun" aria-hidden="true">
-        <svg viewBox="0 0 400 400" class="sun">
-          <g class="sun__rays">
-            <path d="M200 20 L212 80 L188 80Z M200 380 L212 320 L188 320Z M20 200 L80 188 L80 212Z M380 200 L320 188 L320 212Z M73 73 L120 108 L108 120Z M327 327 L280 292 L292 280Z M327 73 L292 120 L280 108Z M73 327 L108 280 L120 292Z" />
-            <path d="M131 34 L152 90 L136 96Z M269 366 L248 310 L264 304Z M34 269 L90 248 L96 264Z M366 131 L310 152 L304 136Z M269 34 L264 96 L248 90Z M131 366 L136 304 L152 310Z M34 131 L96 136 L90 152Z M366 269 L304 264 L310 248Z" opacity=".7"/>
-          </g>
-          <circle cx="200" cy="200" r="92" class="sun__core"/>
-          <path d="M150 196 q12 -16 24 0 M226 196 q12 -16 24 0 M164 238 q36 30 72 0" class="sun__face"/>
-        </svg>
-      </div>
+  <main>
+    <!-- ============ PLATS : tableau jaune ============ -->
+    <section class="dishes" id="plats" aria-labelledby="plats-title">
+      <div class="dishes__inner">
+        <h2 class="title title--ink" id="plats-title">Les plats qui ont fait notre nom</h2>
+        <p class="dishes__intro">Chaque plat se commande en petit, moyen ou grand format, avec le riz de votre choix.</p>
 
-      <div class="hero__content">
-        <p class="hero__script reveal-up">Marché et Resto</p>
-        <h1 class="hero__title" aria-label="Chala">
-          <span class="split">CHALA</span>
-          <svg class="hero__brush" viewBox="0 0 900 140" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M20 118 C 220 92, 520 70, 880 14" />
-          </svg>
-        </h1>
-        <p class="hero__kicker reveal-up">Cuisine antillaise</p>
-        <p class="hero__lead reveal-up">Griot croustillant, tassot cabrit, diri djondjon et bannann peze. Le goût de lakay, servi chaud à Rivière-des-Prairies.</p>
-        <div class="hero__ctas reveal-up">
-          <a class="btn btn--red btn--lg magnetic" href="https://www.ubereats.com/ca/store/chala-le-gouter-antillais/BpYQt7rVVE6Tbn0yuZUxeQ" target="_blank" rel="noopener">Commander en ligne</a>
-          <a class="btn btn--ghost btn--lg magnetic" href="#menu">Voir le menu</a>
-        </div>
-      </div>
-
-      <div class="hero__plates" aria-hidden="true">
-        <figure class="plate plate--1" data-speed="0.6"><img src="/img/griot-djondjon.webp" alt="" /></figure>
-        <figure class="plate plate--2" data-speed="1.1"><img src="/img/poulet-riz-colle.webp" alt="" /></figure>
-        <figure class="plate plate--3" data-speed="0.85"><img src="/img/griot-riz-colle.webp" alt="" /></figure>
-        <div class="badge">
-          <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100 100 m-78 0 a78 78 0 1 1 156 0 a78 78 0 1 1 -156 0"/></defs>
-            <text><textPath href="#circ">MANJE KREYÒL • FÈT AK LANMOU • RDP MONTRÉAL • </textPath></text></svg>
-          <span>Bon<br/>apeti</span>
-        </div>
-      </div>
-
-      <a href="#histoire" class="hero__scroll" aria-label="Défiler">
-        <span>Desann</span><i></i>
-      </a>
-    </section>
-
-    <!-- TAP-TAP MARQUEE -->
-    <div class="taptap" aria-hidden="true">
-      <div class="taptap__stripes"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      <div class="marquee" id="marquee">
-        <div class="marquee__track">
-          <span>Griot</span><b>✦</b><span>Tassot cabrit</span><b>✦</b><span>Diri djondjon</span><b>✦</b><span>Lambi</span><b>✦</b><span>Bannann peze</span><b>✦</b><span>Pikliz</span><b>✦</b><span>Diri kole</span><b>✦</b><span>Lalo</span><b>✦</b><span>Akra</span><b>✦</b><span>Sòs pwa</span><b>✦</b>
-        </div>
-      </div>
-    </div>
-
-    <!-- HISTOIRE -->
-    <section class="story" id="histoire">
-      <div class="story__art" aria-hidden="true">
-        <!-- Fer découpé de Croix-des-Bouquets -->
-        <svg viewBox="0 0 420 480" class="ferdecoupe">
-          <g class="fd-draw">
-            <path d="M210 470 C 205 380, 214 300, 206 210" />
-            <path d="M206 214 C 160 170, 110 168, 60 196 C 110 150, 170 150, 206 210" />
-            <path d="M206 214 C 250 160, 310 150, 368 182 C 310 136, 240 140, 206 210" />
-            <path d="M206 210 C 186 150, 150 110, 98 96 C 160 90, 200 130, 210 206" />
-            <path d="M210 206 C 226 140, 268 104, 330 98 C 268 120, 236 160, 212 212" />
-            <path d="M208 212 C 206 150, 214 100, 236 60" />
-            <circle cx="200" cy="232" r="10" /><circle cx="222" cy="236" r="9" /><circle cx="212" cy="250" r="9" />
-            <path d="M60 420 C 90 390, 130 392, 150 420 C 128 410, 96 410, 70 432Z" />
-            <path d="M300 300 q30 -40 70 -20 q-30 0 -40 30 q-10 -14 -30 -10Z" />
-            <circle cx="358" cy="284" r="3" />
-            <path d="M40 470 L 380 470" />
-          </g>
-        </svg>
-        <figure class="story__photo"><img src="/img/table-lakay.webp" alt="Table garnie de plats haïtiens chez Chala" loading="lazy" /></figure>
-      </div>
-      <div class="story__text">
-        <p class="eyebrow">Istwa nou</p>
-        <h2 class="h2 split-lines">Un morceau d'Haïti au coin de la rue</h2>
-        <p class="fade-in">Chez Chala, on cuisine comme à la maison : épis maison, viandes bien marinées, riz cuit lentement et fritures dorées minute. Chaque assiette porte le goût des dimanches en famille, des marchés de Port-au-Prince et des fêtes où tout le monde repart le ventre plein.</p>
-        <p class="fade-in">Marché et resto à la fois, Chala sert le quartier de Rivière-des-Prairies avec des portions généreuses, un accueil chaleureux et des saveurs qui ne trichent pas.</p>
-        <div class="stats">
-          <div class="stat"><strong data-count="60">0</strong><span>plats et extras</span></div>
-          <div class="stat"><strong data-count="7">0</strong><span>jours sur 7</span></div>
-          <div class="stat"><strong data-count="3">0</strong><span>riz au choix</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PLATS SIGNATURE (scroll horizontal) -->
-    <section class="dishes" id="plats">
-      <div class="dishes__pin">
-        <div class="dishes__head">
-          <p class="eyebrow">Plat siyati</p>
-          <h2 class="h2">Nos incontournables</h2>
-          <p class="dishes__hint">Faites défiler pour goûter</p>
-        </div>
-        <div class="dishes__track" id="track">
-          <article class="dish">
-            <div class="dish__img"><img src="/img/griot-djondjon.webp" alt="Griot avec diri djondjon, bannann peze et pikliz" loading="lazy" /></div>
-            <div class="dish__body"><span class="dish__num">01</span><h3>Griot et diri djondjon</h3><p>Porc mariné et frit, riz noir aux champignons djondjon, bannann peze et pikliz.</p><span class="dish__price">dès 14,98 $</span></div>
-          </article>
-          <article class="dish">
-            <div class="dish__img"><img src="/img/poulet-riz-colle.webp" alt="Poulet en sauce avec riz collé, macaroni et banane" loading="lazy" /></div>
-            <div class="dish__body"><span class="dish__num">02</span><h3>Poulet et diri kole</h3><p>Poulet en sauce créole, riz collé aux pois rouges, macaroni gratiné et banane pesée.</p><span class="dish__price">dès 14,98 $</span></div>
-          </article>
-          <article class="dish">
-            <div class="dish__img"><img src="/img/fritay-griot.webp" alt="Fritay avec griot, banane et salade" loading="lazy" /></div>
-            <div class="dish__body"><span class="dish__num">03</span><h3>Fritay</h3><p>Le plateau de fête : griot, fritures dorées, bannann peze, pikliz et sauce piquante.</p><span class="dish__price">dès 14,98 $</span></div>
-          </article>
-          <article class="dish">
-            <div class="dish__img"><img src="/img/legumes-riz-colle.webp" alt="Légumes haïtiens avec riz collé" loading="lazy" /></div>
-            <div class="dish__body"><span class="dish__num">04</span><h3>Legim</h3><p>Le légume haïtien mijoté avec viande, servi sur riz collé ou riz blanc.</p><span class="dish__price">dès 17,98 $</span></div>
-          </article>
-          <article class="dish">
-            <div class="dish__img"><img src="/img/riz-blanc-sauce-pois.webp" alt="Riz blanc, sauce pois et légumes" loading="lazy" /></div>
-            <div class="dish__body"><span class="dish__num">05</span><h3>Diri blan, sòs pwa</h3><p>Riz blanc, sauce pois noir veloutée et légumes, le classique réconfortant.</p><span class="dish__price">dès 17,98 $</span></div>
-          </article>
-          <article class="dish">
-            <div class="dish__img"><img src="/img/fritay-poulet.webp" alt="Poulet frit, griot, macaroni et bananes" loading="lazy" /></div>
-            <div class="dish__body"><span class="dish__num">06</span><h3>Fritay poulet</h3><p>Poulet frit doré, accompagnements maison et bannann peze bien croustillantes.</p><span class="dish__price">dès 14,98 $</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- MENU -->
-    <section class="menu" id="menu">
-      <div class="menu__head">
-        <p class="eyebrow">Meni an</p>
-        <h2 class="h2 split-lines">Le menu complet</h2>
-        <p class="menu__sub">Choisissez votre riz : <em>kole</em> (collé aux pois), <em>djondjon</em> ou <em>blan</em>.</p>
-      </div>
-      <div class="tabs" id="tabs" role="tablist"></div>
-      <div class="menu__grid" id="menuGrid"></div>
-      <p class="menu__note">Prix sujets à changement. Taxes en sus.</p>
-    </section>
-
-    <!-- PARALLAX BON APETI -->
-    <section class="feast" aria-label="Bon apeti">
-      <div class="feast__img"><img src="/img/table-lakay.webp" alt="" loading="lazy" /></div>
-      <div class="feast__overlay"></div>
-      <h2 class="feast__title"><span>Bon</span><span>apeti!</span></h2>
-      <p class="feast__sub">Pour emporter, en livraison ou sur place.</p>
-    </section>
-
-    <!-- VISITE -->
-    <section class="visit" id="visite">
-      <div class="visit__info">
-        <p class="eyebrow">Kote nou ye</p>
-        <h2 class="h2">Passez nous voir</h2>
-        <address>
-          11866 boulevard Rivière-des-Prairies<br />Montréal (Québec) H1C 1P9
-        </address>
-        <a class="visit__tel magnetic" href="tel:+15145883708">514 588-3708</a>
-
-        <h3 class="visit__h3">Lè nou louvri</h3>
-        <ul class="hours" id="hours">
-          <li data-day="1"><span>Lundi</span><span>11 h à 19 h</span></li>
-          <li data-day="2"><span>Mardi</span><span>11 h à 20 h</span></li>
-          <li data-day="3"><span>Mercredi</span><span>11 h à 21 h</span></li>
-          <li data-day="4"><span>Jeudi</span><span>11 h à 21 h</span></li>
-          <li data-day="5"><span>Vendredi</span><span>11 h à 21 h</span></li>
-          <li data-day="6"><span>Samedi</span><span>11 h à 20 h</span></li>
-          <li data-day="0"><span>Dimanche</span><span>12 h à 19 h</span></li>
+        <ul class="dishlist" id="dishlist">
+          <li class="dish" data-img="/img/griot-djondjon.webp">
+            <img class="dish__thumb" src="/img/griot-djondjon.webp" alt="" loading="lazy" />
+            <h3 class="dish__name">Griyo ak diri djondjon</h3>
+            <p class="dish__desc">Porc mariné puis frit, riz noir aux champignons djondjon, bannann peze et pikliz.</p>
+            <p class="dish__price">dès 14,98 $</p>
+          </li>
+          <li class="dish" data-img="/img/poulet-riz-colle.webp">
+            <img class="dish__thumb" src="/img/poulet-riz-colle.webp" alt="" loading="lazy" />
+            <h3 class="dish__name">Poul ak diri kole</h3>
+            <p class="dish__desc">Poulet en sauce créole, riz collé aux pois rouges, salade de macaroni.</p>
+            <p class="dish__price">dès 14,98 $</p>
+          </li>
+          <li class="dish" data-img="/img/fritay-griot.webp">
+            <img class="dish__thumb" src="/img/fritay-griot.webp" alt="" loading="lazy" />
+            <h3 class="dish__name">Fritay</h3>
+            <p class="dish__desc">Le plateau des fêtes : griot, fritures dorées, bannann peze, pikliz et sauce piquante.</p>
+            <p class="dish__price">dès 14,98 $</p>
+          </li>
+          <li class="dish" data-img="/img/legumes-riz-colle.webp">
+            <img class="dish__thumb" src="/img/legumes-riz-colle.webp" alt="" loading="lazy" />
+            <h3 class="dish__name">Legim</h3>
+            <p class="dish__desc">Légumes haïtiens mijotés avec la viande, sur riz collé ou riz blanc.</p>
+            <p class="dish__price">dès 17,98 $</p>
+          </li>
+          <li class="dish" data-img="/img/riz-blanc-sauce-pois.webp">
+            <img class="dish__thumb" src="/img/riz-blanc-sauce-pois.webp" alt="" loading="lazy" />
+            <h3 class="dish__name">Diri blan, sòs pwa</h3>
+            <p class="dish__desc">Riz blanc, sauce pois noir veloutée et légumes à part.</p>
+            <p class="dish__price">dès 17,98 $</p>
+          </li>
+          <li class="dish" data-img="/img/fritay-poulet.webp">
+            <img class="dish__thumb" src="/img/fritay-poulet.webp" alt="" loading="lazy" />
+            <h3 class="dish__name">Fritay poul</h3>
+            <p class="dish__desc">Poulet frit bien doré, salade de macaroni, bannann peze et pikliz.</p>
+            <p class="dish__price">dès 14,98 $</p>
+          </li>
         </ul>
-        <div class="visit__ctas">
-          <a class="btn btn--red magnetic" href="https://www.ubereats.com/ca/store/chala-le-gouter-antillais/BpYQt7rVVE6Tbn0yuZUxeQ" target="_blank" rel="noopener">Uber Eats</a>
-          <a class="btn btn--ghost magnetic" href="https://www.google.com/maps/place/Chala+le+gouter+antillais/@45.6499259,-73.5635998,17z/data=!4m6!3m5!1s0x4cc8e101a10f26b5:0xdb7bbf002c0af43f!8m2!3d45.6499222!4d-73.5610249" target="_blank" rel="noopener">Itinéraire</a>
+      </div>
+      <figure class="peek" id="peek" aria-hidden="true"><img src="/img/griot-djondjon.webp" alt="" /></figure>
+    </section>
+
+    <!-- ============ MENU : panneau peint ============ -->
+    <section class="menu" id="menu" aria-labelledby="menu-title">
+      <div class="board">
+        <div class="board__head">
+          <h2 class="title" id="menu-title">Le menu</h2>
+          <p class="board__rice">Riz au choix : <strong>kole</strong>, collé aux pois rouges. <strong>Djondjon</strong>, noir aux champignons. <strong>Blan</strong>, nature.</p>
+        </div>
+        <div class="tabs" id="tabs" role="tablist" aria-label="Catégories du menu"></div>
+        <div class="board__list" id="menuGrid" role="tabpanel" aria-live="polite"></div>
+        <p class="board__note">Prix sujets à changement, taxes en sus.</p>
+      </div>
+    </section>
+
+    <!-- ============ LAKAY : mur crème + fer découpé ============ -->
+    <section class="lakay" aria-labelledby="lakay-title">
+      <svg class="metal" viewBox="0 0 520 560" aria-hidden="true">
+        <!-- Fer découpé : arbre de vie, soleil et oiseaux, découpés dans une seule tôle -->
+        <path fill="currentColor" fill-rule="evenodd" d="
+          M260 548 C 252 470 266 400 254 300 L 266 300 C 278 400 266 470 274 548 Z
+          M258 306 C 200 250 130 246 60 282 C 120 214 206 216 262 300 Z
+          M266 300 C 320 222 404 212 468 262 C 400 230 324 240 270 308 Z
+          M256 296 C 228 214 180 160 104 140 C 192 128 248 190 266 290 Z
+          M268 290 C 286 196 346 146 428 138 C 350 166 304 214 276 298 Z
+          M262 292 C 254 210 262 150 296 92 C 286 160 276 220 272 292 Z
+          M380 64 a 44 44 0 1 1 0.1 0 Z M380 82 a 26 26 0 1 0 0.1 0 Z
+          M380 6 l 6 30 h -12 Z M380 150 l 6 -30 h -12 Z M306 78 l 30 6 v -12 Z M454 78 l -30 6 v -12 Z
+          M326 24 l 22 22 -8 8 Z M434 132 l -22 -22 -8 8 Z M434 24 l -22 22 8 8 Z M326 132 l 22 -22 8 8 Z
+          M70 210 c 26 -28 62 -26 84 -6 c -24 -6 -40 0 -52 14 c 18 -2 30 6 36 18 c -26 -12 -50 -12 -68 -26 Z
+          M420 376 c 30 -40 74 -30 92 -8 c -30 -6 -48 4 -58 22 c -14 -8 -24 -12 -34 -14 Z
+          M40 548 h 440 v 10 h -440 Z
+          M120 520 c 10 -40 40 -60 70 -60 c -30 20 -44 40 -50 60 Z
+          M400 520 c -10 -40 -40 -60 -70 -60 c 30 20 44 40 50 60 Z" />
+      </svg>
+      <div class="lakay__text">
+        <h2 class="title title--ink" id="lakay-title">Lakay se lakay</h2>
+        <p>Chez Chala, l'épis est fait maison et les viandes marinent longtemps avant de passer à la poêle. Le riz cuit doucement, les bananes sont pesées et frites à la commande.</p>
+        <p>Marché et resto à la fois, on sert Rivière-des-Prairies avec des portions qui nourrissent et un accueil qui parle créole.</p>
+      </div>
+    </section>
+
+    <!-- ============ VISITE ============ -->
+    <section class="visit" id="visite" aria-labelledby="visite-title">
+      <div class="visit__info">
+        <h2 class="title" id="visite-title">Venez nous voir</h2>
+        <address class="visit__addr">11866 boulevard Rivière-des-Prairies<br />Montréal (Québec) H1C 1P9</address>
+        <a class="visit__tel" href="tel:+15145883708">514 588-3708</a>
+
+        <table class="hours" aria-label="Heures d'ouverture">
+          <tbody id="hours">
+            <tr data-day="1"><th scope="row">Lundi</th><td>11 h à 19 h</td></tr>
+            <tr data-day="2"><th scope="row">Mardi</th><td>11 h à 20 h</td></tr>
+            <tr data-day="3"><th scope="row">Mercredi</th><td>11 h à 21 h</td></tr>
+            <tr data-day="4"><th scope="row">Jeudi</th><td>11 h à 21 h</td></tr>
+            <tr data-day="5"><th scope="row">Vendredi</th><td>11 h à 21 h</td></tr>
+            <tr data-day="6"><th scope="row">Samedi</th><td>11 h à 20 h</td></tr>
+            <tr data-day="0"><th scope="row">Dimanche</th><td>12 h à 19 h</td></tr>
+          </tbody>
+        </table>
+
+        <div class="visit__actions">
+          <a class="btn btn--red" href="https://www.ubereats.com/ca/store/chala-le-gouter-antillais/BpYQt7rVVE6Tbn0yuZUxeQ" target="_blank" rel="noopener">Commander sur Uber Eats</a>
+          <a class="btn btn--line" href="https://www.google.com/maps/place/Chala+le+gouter+antillais/@45.6499259,-73.5635998,17z/data=!4m6!3m5!1s0x4cc8e101a10f26b5:0xdb7bbf002c0af43f!8m2!3d45.6499222!4d-73.5610249" target="_blank" rel="noopener">Obtenir l'itinéraire</a>
         </div>
       </div>
       <div class="visit__map">
@@ -266,19 +207,16 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="taptap__stripes"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    <div class="footer__big" aria-hidden="true">CHALA</div>
-    <div class="footer__row">
-      <p>Marché et Resto Chala, cuisine antillaise</p>
-      <p><a href="tel:+15145883708">514 588-3708</a> · 11866 boul. Rivière-des-Prairies</p>
-      <p>© <span id="year"></span> Chala. Fèt ak lanmou.</p>
+  <footer class="foot">
+    <div class="bunting bunting--still" aria-hidden="true" data-bunting></div>
+    <div class="foot__row">
+      <p class="foot__name">Chala</p>
+      <p>Marché et Resto Chala, cuisine antillaise.<br />11866 boul. Rivière-des-Prairies, Montréal.</p>
+      <p><a href="tel:+15145883708">514 588-3708</a><br />© <span id="year"></span> Fèt ak lanmou.</p>
     </div>
   </footer>
 
   <script src="/vendor/gsap.min.js"></script>
-  <script src="/vendor/ScrollTrigger.min.js"></script>
-  <script src="/vendor/lenis.min.js"></script>
   <script src="/menu-data.js"></script>
   <script src="/main.js"></script>
 </body>
