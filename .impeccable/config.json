@@ -29,6 +29,15 @@
         ],
         "createdAt": "2026-10-30T01:36:26.711Z",
         "reason": "Claude: only Bungee display titles (single-word sign lettering) use tight leading; body text is 1.6"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "public/admin/index.html"
+        ],
+        "createdAt": "2026-10-30T19:59:22.474Z",
+        "reason": "Claude: cream is the Chala brand color taken from the restaurant's own logo lettering (#efe3c8), used deliberately in the admin to match the public site"
       }
     ]
   }
