@@ -1,3 +1,7 @@
+@font-face { font-family: "Bowlby One"; src: url("/fonts/bowlby-one.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Allura"; src: url("/fonts/allura.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "DM Sans"; src: url("/fonts/dm-sans.woff2") format("woff2"); font-weight: 100 1000; font-display: swap; }
+
 :root {
   --ink: #1a2323;
   --ink-2: #223030;
@@ -132,7 +136,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 
 .hero__content { position: relative; z-index: 2; }
 .hero__script { font-family: var(--script); color: var(--gold); font-size: clamp(2.4rem, 5vw, 4.4rem); margin: 0 0 -.6rem; line-height: 1; }
-.hero__title { position: relative; font-family: var(--display); font-size: clamp(5.5rem, 17vw, 15rem); line-height: .82; letter-spacing: .01em; }
+.hero__title { position: relative; font-family: var(--display); white-space: nowrap; font-size: clamp(4rem, 10.5vw, 11rem); line-height: .82; letter-spacing: .01em; }
 .hero__title .char { display: inline-block; will-change: transform; }
 .hero__brush { position: absolute; left: -2%; bottom: -12%; width: 110%; height: 45%; z-index: -1; overflow: visible; }
 .hero__brush path { fill: none; stroke: var(--red); stroke-width: 22; stroke-linecap: round; }
@@ -214,7 +218,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .menu__sub { color: var(--cream-2); margin: 0 0 2rem; }
 .menu__sub em { font-style: normal; color: var(--gold); font-weight: 700; }
 .tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin-bottom: 2.8rem; }
-.tab { border: 2px solid rgba(241, 231, 211, .25); background: transparent; color: var(--cream); padding: .6rem 1.15rem; border-radius: 999px; font: 500 .95rem var(--sans); cursor: pointer; transition: all .3s var(--ease); }
+.tab { border: 2px solid rgba(241, 231, 211, .25); background: transparent; color: var(--cream); padding: .6rem 1.15rem; border-radius: 999px; font: 500 .95rem var(--sans); cursor: pointer; transition: background .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease); }
 .tab small { font-family: var(--script); font-size: 1.15rem; color: var(--gold); margin-left: .35rem; }
 .tab:hover { border-color: var(--cream); }
 .tab[aria-selected="true"] { background: var(--cream); color: var(--ink); border-color: var(--cream); }
@@ -262,6 +266,8 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
   .burger { display: block; }
   .nav__actions .btn { padding: .6rem 1rem; font-size: .85rem; }
   .hero { grid-template-columns: 1fr; padding-top: 6.5rem; text-align: left; }
+  .hero__title { font-size: 21vw; }
+  .h2 { font-size: 8.4vw; }
   .hero__plates { height: 92vw; max-height: 520px; }
   .badge { width: 110px; height: 110px; }
   .badge text { font-size: 13px; }

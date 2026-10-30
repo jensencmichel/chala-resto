@@ -192,7 +192,7 @@
   });
 
   /* ---------- Menu items reveal ---------- */
-  gsap.from(".tab", { y: 20, opacity: 0, stagger: .04, duration: .6, ease: "power3.out", scrollTrigger: { trigger: "#tabs", start: "top 90%" } });
+  ScrollTrigger.create({ trigger: "#tabs", start: "top 92%", once: true, onEnter: () => gsap.fromTo(".tab", { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, stagger: .04, duration: .6, ease: "power3.out", clearProps: "transform,opacity,visibility" }) });
   ScrollTrigger.create({ trigger: "#menuGrid", start: "top 85%", once: true, onEnter: () => gsap.from($$(".mi", grid), { y: 24, opacity: 0, duration: .55, stagger: .035, ease: "power3.out" }) });
 
   /* ---------- Feast parallax ---------- */
