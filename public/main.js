@@ -11,8 +11,24 @@
     el.innerHTML = "<span></span>".repeat(n);
   });
 
+  /* ---------- Données de l'espace propriétaire ---------- */
+  const S = window.ChalaStore;
+  const HRS = S.hours();
+
+  const banner = S.banner();
+  if (banner.on && banner.text.trim()) {
+    const b = document.createElement("div");
+    b.className = "notice";
+    b.setAttribute("role", "status");
+    b.textContent = banner.text;
+    document.body.prepend(b);
+  }
+
   /* ---------- Heures (heure de Montréal) ---------- */
-  const HOURS = { 0: [12, 19], 1: [11, 19], 2: [11, 20], 3: [11, 21], 4: [11, 21], 5: [11, 21], 6: [11, 20] };
+  $("#hours").innerHTML = [1, 2, 3, 4, 5, 6, 0].map(d => {
+    const x = HRS[d];
+    return `<tr data-day="${d}"><th scope="row">${S.DAYS[d]}</th><td>${x.closed ? "Fermé" : `${S.label(x.o)} à ${S.label(x.c)}`}</td></tr>`;
+  }).join("");
   const now = () => {
     const p = new Intl.DateTimeFormat("en-US", { timeZone: "America/Toronto", weekday: "short", hour: "numeric", minute: "numeric", hour12: false }).formatToParts(new Date());
     const g = t => p.find(x => x.type === t).value;
@@ -20,13 +36,13 @@
   };
   function updateHours() {
     const { day, h } = now();
-    const [o, c] = HOURS[day];
-    const open = h >= o && h < c;
+    const x = HRS[day], o = S.toNum(x.o), c = S.toNum(x.c);
+    const open = !x.closed && h >= o && h < c;
     const st = $("#sticker");
     st.classList.toggle("is-closed", !open);
     st.innerHTML = open
-      ? `<span>Ouvert</span><small>jusqu'à ${c} h</small>`
-      : h < o ? `<span>Fermé</span><small>ouvre à ${o} h</small>` : `<span>Fermé</span><small>à demain</small>`;
+      ? `<span>Ouvert</span><small>jusqu'à ${S.label(x.c)}</small>`
+      : !x.closed && h < o ? `<span>Fermé</span><small>ouvre à ${S.label(x.o)}</small>` : `<span>Fermé</span><small>à demain</small>`;
     $$("#hours tr").forEach(tr => tr.classList.toggle("is-today", +tr.dataset.day === day));
   }
   updateHours();
@@ -34,10 +50,10 @@
 
   /* ---------- Menu ---------- */
   const money = v => typeof v === "number" ? v.toFixed(2).replace(".", ",").replace(/,00$/, "") + " $" : v;
-  const menu = window.CHALA_MENU || [];
+  const menu = S.menu();
   const tabs = $("#tabs"), list = $("#menuGrid");
-  const paint = cat => cat.items.map(([n, s, p]) =>
-    `<div class="mi"><span class="mi__name">${n}${s ? `<span class="mi__size">${s}</span>` : ""}</span><span class="mi__dots"></span><span class="mi__price">${money(p)}</span></div>`).join("");
+  const paint = cat => cat.items.map(([n, s, p, out]) =>
+    `<div class="mi${out ? " is-out" : ""}"><span class="mi__name">${n}${s ? `<span class="mi__size">${s}</span>` : ""}</span><span class="mi__dots"></span><span class="mi__price">${out ? "Épuisé" : money(p)}</span></div>`).join("");
 
   function select(id) {
     const cat = menu.find(c => c.id === id);

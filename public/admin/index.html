@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Espace propriétaire | Chala</title>
+  <meta name="theme-color" content="#1f2a2a" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body>
+  <!-- ============ Connexion ============ -->
+  <main class="login" id="login">
+    <form class="login__card" id="loginForm">
+      <p class="login__script">Marché et Resto</p>
+      <h1 class="login__name">Chala</h1>
+      <p class="login__lead">Espace propriétaire</p>
+      <label class="field">
+        <span>Code d'accès</span>
+        <input id="code" type="password" autocomplete="current-password" required />
+      </label>
+      <p class="login__hint">Démo : le code est <strong>chala</strong></p>
+      <p class="login__error" id="loginError" role="alert" hidden>Ce code ne fonctionne pas. Essayez « chala ».</p>
+      <button class="btn btn--red" type="submit">Entrer</button>
+      <a class="login__back" href="/">Retour au site</a>
+    </form>
+  </main>
+
+  <!-- ============ Application ============ -->
+  <div class="app" id="app" hidden>
+    <aside class="side">
+      <div class="side__brand"><span class="side__script">Marché et Resto</span><span class="side__name">Chala</span></div>
+      <nav class="side__nav" aria-label="Sections de l'espace propriétaire">
+        <button class="nav-btn" data-view="accueil" aria-current="page"><span class="ico" aria-hidden="true">◐</span>Aujourd'hui</button>
+        <button class="nav-btn" data-view="menu"><span class="ico" aria-hidden="true">≡</span>Menu et prix</button>
+        <button class="nav-btn" data-view="annonce"><span class="ico" aria-hidden="true">✦</span>Annonce</button>
+        <button class="nav-btn" data-view="heures"><span class="ico" aria-hidden="true">◷</span>Heures</button>
+        <button class="nav-btn" data-view="commandes"><span class="ico" aria-hidden="true">▤</span>Commandes</button>
+      </nav>
+      <a class="side__site" href="/" target="_blank" rel="noopener">Voir le site</a>
+    </aside>
+
+    <div class="main">
+      <header class="top">
+        <p class="demo">Mode démo : vos changements s'affichent sur le site, dans ce navigateur seulement.</p>
+        <button class="link" id="reset" type="button">Remettre la démo à zéro</button>
+      </header>
+
+      <!-- Aujourd'hui -->
+      <section class="view" data-view="accueil">
+        <h2 class="view__title">Bonjour, voici Chala aujourd'hui</h2>
+        <div class="cards">
+          <article class="card card--status" id="cardStatus"><h3>Statut</h3><p class="big" id="todayStatus">…</p><p id="todayHours"></p></article>
+          <article class="card"><h3>Plats épuisés</h3><p class="big" id="outCount">0</p><button class="link" data-goto="menu">Gérer le menu</button></article>
+          <article class="card"><h3>Annonce sur le site</h3><p class="big" id="bannerState">Aucune</p><button class="link" data-goto="annonce">Modifier l'annonce</button></article>
+        </div>
+        <h3 class="sub">Actions rapides</h3>
+        <div class="quick">
+          <button class="quick__btn" data-goto="menu">Changer un prix</button>
+          <button class="quick__btn" data-goto="menu">Marquer un plat épuisé</button>
+          <button class="quick__btn" data-goto="annonce">Annoncer le plat du jour</button>
+          <button class="quick__btn" data-goto="heures">Fermer un jour férié</button>
+        </div>
+      </section>
+
+      <!-- Menu -->
+      <section class="view" data-view="menu" hidden>
+        <h2 class="view__title">Menu et prix</h2>
+        <p class="view__lead">Changez un prix ou cochez « Épuisé ». Le site se met à jour dès que vous enregistrez.</p>
+        <div class="chips" id="catTabs" role="tablist" aria-label="Catégories"></div>
+        <form id="menuForm">
+          <div class="rows" id="menuRows"></div>
+          <button class="link link--add" type="button" id="addItem">+ Ajouter un plat dans cette catégorie</button>
+          <div class="savebar"><button class="btn btn--red" type="submit">Enregistrer le menu</button><span class="saved" id="menuSaved" role="status"></span></div>
+        </form>
+      </section>
+
+      <!-- Annonce -->
+      <section class="view" data-view="annonce" hidden>
+        <h2 class="view__title">Annonce du jour</h2>
+        <p class="view__lead">Une bande rouge en haut du site. Idéal pour le plat du jour, une promo ou une fermeture.</p>
+        <form id="bannerForm" class="stack">
+          <label class="switch"><input type="checkbox" id="bannerOn" /><span>Afficher l'annonce sur le site</span></label>
+          <label class="field"><span>Texte de l'annonce</span><input id="bannerText" maxlength="120" placeholder="Aujourd'hui : soup joumou tout l'après-midi" /></label>
+          <div class="ideas">
+            <span>Idées :</span>
+            <button type="button" class="chip-idea">Plat du jour : tassot kabrit, 21,98 $</button>
+            <button type="button" class="chip-idea">Soup joumou ce dimanche</button>
+            <button type="button" class="chip-idea">Fermé le 25 décembre, Jwaye Nwèl !</button>
+          </div>
+          <p class="preview-label">Aperçu</p>
+          <div class="preview" id="bannerPreview">Votre annonce apparaîtra ici</div>
+          <div class="savebar"><button class="btn btn--red" type="submit">Enregistrer l'annonce</button><span class="saved" id="bannerSaved" role="status"></span></div>
+        </form>
+      </section>
+
+      <!-- Heures -->
+      <section class="view" data-view="heures" hidden>
+        <h2 class="view__title">Heures d'ouverture</h2>
+        <p class="view__lead">Le site affiche « Ouvert » ou « Fermé » selon ces heures, à l'heure de Montréal.</p>
+        <form id="hoursForm">
+          <div class="hours" id="hoursRows"></div>
+          <div class="savebar"><button class="btn btn--red" type="submit">Enregistrer les heures</button><span class="saved" id="hoursSaved" role="status"></span></div>
+        </form>
+      </section>
+
+      <!-- Commandes (forfait Complet) -->
+      <section class="view" data-view="commandes" hidden>
+        <h2 class="view__title">Commandes en ligne</h2>
+        <div class="locked">
+          <p class="locked__tag">Forfait Complet</p>
+          <p>Les clients commandent et paient sur votre site, sans commission Uber Eats. Les commandes arrivent ici avec une alerte sonore.</p>
+        </div>
+        <div class="orders" aria-label="Exemple de commandes">
+          <article class="order order--new"><header><strong>#1042</strong><span>Ramassage 17 h 45</span></header><p>2 × Griot, riz djondjon, grand plat<br />1 × Pikliz</p><footer><span>Marie-Lourdes P.</span><b>46,65 $</b></footer><div class="order__actions"><button class="btn btn--red" type="button" disabled>Accepter</button></div></article>
+          <article class="order"><header><strong>#1041</strong><span>En préparation</span></header><p>1 × Tassot cabrit, riz collé, grand plat<br />1 × Cola Couronne</p><footer><span>Jean-Robert D.</span><b>30,48 $</b></footer></article>
+          <article class="order"><header><strong>#1040</strong><span>Prête</span></header><p>3 × Fritay poulet, grand plat</p><footer><span>Nadège C.</span><b>59,94 $</b></footer></article>
+        </div>
+        <p class="view__lead">Exemple fictif pour la démo.</p>
+      </section>
+    </div>
+
+    <nav class="tabbar" aria-label="Sections">
+      <button class="nav-btn" data-view="accueil" aria-current="page"><span class="ico" aria-hidden="true">◐</span>Aujourd'hui</button>
+      <button class="nav-btn" data-view="menu"><span class="ico" aria-hidden="true">≡</span>Menu</button>
+      <button class="nav-btn" data-view="annonce"><span class="ico" aria-hidden="true">✦</span>Annonce</button>
+      <button class="nav-btn" data-view="heures"><span class="ico" aria-hidden="true">◷</span>Heures</button>
+      <button class="nav-btn" data-view="commandes"><span class="ico" aria-hidden="true">▤</span>Commandes</button>
+    </nav>
+  </div>
+
+  <script src="/menu-data.js"></script>
+  <script src="/store.js"></script>
+  <script src="/admin/admin.js"></script>
+</body>
+</html>
