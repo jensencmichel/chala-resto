@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "public/index.html"
+        ],
+        "createdAt": "2026-10-30T01:36:26.687Z",
+        "reason": "Claude: measured computed padding 20px-64px on .dishes/.menu/.lakay and 28px on .board in Playwright; detector false positive"
+      },
+      {
+        "rule": "hard-offset-shadow",
+        "value": "*",
+        "files": [
+          "public/index.html"
+        ],
+        "createdAt": "2026-10-30T01:36:26.699Z",
+        "reason": "Claude: intentional hand-painted tap-tap sign direction from the design plan (painted offset shadows)"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "public/index.html"
+        ],
+        "createdAt": "2026-10-30T01:36:26.711Z",
+        "reason": "Claude: only Bungee display titles (single-word sign lettering) use tight leading; body text is 1.6"
+      }
+    ]
+  }
+}

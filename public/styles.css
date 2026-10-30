@@ -7,8 +7,8 @@
 @font-face { font-family: "Bungee"; src: url("/fonts/bungee.woff2") format("woff2"); font-display: swap; }
 @font-face { font-family: "Bungee Shade"; src: url("/fonts/bungee-shade.woff2") format("woff2"); font-display: block; }
 @font-face { font-family: "Bungee Inline"; src: url("/fonts/bungee-inline.woff2") format("woff2"); font-display: block; }
-@font-face { font-family: "Fraunces"; src: url("/fonts/fraunces.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Fraunces"; src: url("/fonts/fraunces-italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
+@font-face { font-family: "Petrona"; src: url("/fonts/petrona.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Petrona"; src: url("/fonts/petrona-italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
 @font-face { font-family: "Allura"; src: url("/fonts/allura.woff2") format("woff2"); font-display: swap; }
 
 :root {
@@ -16,14 +16,14 @@
   --ardwaz: #1f2a2a;   /* ardoise, fond du logo */
   --ardwaz-2: #273535;
   --krem: #efe3c8;     /* lettres du logo */
-  --wouj: #c8202f;     /* coup de pinceau */
+  --wouj: #bd1d2b;     /* coup de pinceau */
   --jon: #f4b400;      /* jaune tap-tap */
   --ble: #1d4fa8;      /* bleu lanmè */
   --fe: #9a4a24;       /* fer découpé rouillé */
   --or: #c9a45a;       /* script du logo */
 
   --sign: "Bungee", "Arial Black", sans-serif;
-  --text: "Fraunces", Georgia, serif;
+  --text: "Petrona", Georgia, serif;
   --script: "Allura", cursive;
 
   /* Échelle 1.333 */
@@ -46,7 +46,6 @@ body {
   color: var(--krem);
   font-family: var(--text);
   font-size: var(--s0);
-  font-variation-settings: "SOFT" 60, "WONK" 0;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -62,7 +61,7 @@ h1, h2, h3, p { margin: 0; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   padding: .7rem 1.25rem; border-radius: 6px;
-  font: 600 1rem/1.2 var(--text); text-decoration: none;
+  font: 600 1rem/1.3 var(--text); text-decoration: none;
   border: 2px solid transparent;
   box-shadow: 4px 4px 0 var(--shadow, transparent);
   transition: transform .2s var(--ease), box-shadow .2s var(--ease);
@@ -131,7 +130,7 @@ h1, h2, h3, p { margin: 0; }
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
   gap: clamp(2rem, 5vw, 5rem); align-items: end; margin-top: clamp(1.5rem, 3vw, 3rem);
 }
-.sign__lead { font-size: clamp(1.25rem, 1.6vw, 1.5rem); line-height: 1.45; max-width: 30ch; font-variation-settings: "SOFT" 100, "WONK" 1; }
+.sign__lead { font-size: clamp(1.25rem, 1.6vw, 1.5rem); line-height: 1.45; max-width: 30ch; }
 .sign__actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.8rem; }
 
 .sign__photo {
@@ -172,7 +171,7 @@ h1, h2, h3, p { margin: 0; }
   cursor: default; transition: background .25s var(--ease), padding .25s var(--ease);
 }
 .dish__thumb { display: none; }
-.dish__name { font-family: var(--sign); font-weight: 400; font-size: clamp(1.5rem, 3vw, 2.4rem); line-height: 1; }
+.dish__name { font-family: var(--sign); font-weight: 400; font-size: clamp(1.5rem, 3vw, 2.4rem); line-height: 1.1; }
 .dish__desc { max-width: 42ch; }
 .dish__price { font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .dish:hover, .dish:focus-within { background: var(--ardwaz); color: var(--jon); padding-inline: 1.2rem; }
@@ -199,7 +198,7 @@ h1, h2, h3, p { margin: 0; }
 .board__rice { max-width: 52ch; justify-self: end; }
 .tabs { display: flex; flex-wrap: wrap; gap: .5rem; margin: 2rem 0 1.5rem; }
 .tab {
-  font: 600 .98rem/1 var(--text); color: var(--krem); background: var(--ardwaz);
+  font: 600 .98rem/1.3 var(--text); color: var(--krem); background: var(--ardwaz);
   border: 0; border-radius: 4px; padding: .7rem 1rem; cursor: pointer;
   transition: background .2s var(--ease), transform .2s var(--ease);
 }
@@ -210,7 +209,7 @@ h1, h2, h3, p { margin: 0; }
   break-inside: avoid; display: grid; grid-template-columns: auto 1fr auto; gap: .6rem; align-items: baseline;
   padding: .75rem 0;
 }
-.mi__name { font-weight: 650; }
+.mi__name { font-weight: 600; }
 .mi__size { display: block; font-size: var(--s-1); font-style: italic; color: #5c4a2c; font-weight: 450; }
 .mi__dots { border-bottom: 2px dotted rgba(31, 42, 42, .45); transform: translateY(-.3em); }
 .mi__price { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -245,7 +244,7 @@ h1, h2, h3, p { margin: 0; }
 .foot { background: var(--ardwaz-2); }
 .foot .bunting { border-top: 0; }
 .foot__row { display: grid; grid-template-columns: auto 1fr auto; gap: 2rem; align-items: end; padding: 2.5rem var(--pad) 2.5rem; font-size: .95rem; }
-.foot__name { font-family: "Bungee Shade", var(--sign); font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: .9; color: var(--wouj); }
+.foot__name { font-family: "Bungee Shade", var(--sign); font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: .9; color: var(--jon); }
 .foot a { text-decoration: none; font-weight: 600; }
 
 /* ---------- Mobile ---------- */
