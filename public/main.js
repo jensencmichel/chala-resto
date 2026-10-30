@@ -59,23 +59,23 @@
   });
   if (menu.length) select(menu[0].id);
 
-  if (!motion) return;
+  /* ---------- Fiche du plat (cliquable) ---------- */
+  const sheet = $("#sheet");
+  $$(".plate__btn").forEach(btn => btn.addEventListener("click", () => {
+    $("#sheet-img").src = btn.dataset.img;
+    $("#sheet-img").alt = btn.dataset.name;
+    $("#sheet-name").textContent = btn.dataset.name;
+    $("#sheet-desc").textContent = btn.dataset.desc;
+    $("#sheet-sizes").innerHTML = btn.dataset.sizes.split("|").map(x => { const [k, v] = x.split("="); return `<tr><th scope="row">${k}</th><td>${v}</td></tr>`; }).join("");
+    sheet.showModal();
+    if (motion) {
+      gsap.fromTo(sheet, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: .35, ease: "power3.out" });
+      gsap.fromTo("#sheet-img", { scale: .7, rotate: -18 }, { scale: 1, rotate: 0, duration: .6, ease: "back.out(1.6)" });
+    }
+  }));
+  sheet.addEventListener("click", e => { if (e.target === sheet) sheet.close(); });
 
-  /* ---------- Photo qui suit le curseur (plats) ---------- */
-  const peek = $("#peek"), peekImg = $("img", peek);
-  if (matchMedia("(hover: hover) and (min-width: 901px)").matches) {
-    const xTo = gsap.quickTo(peek, "x", { duration: .45, ease: "power3" });
-    const yTo = gsap.quickTo(peek, "y", { duration: .45, ease: "power3" });
-    gsap.set(peek, { xPercent: -50, yPercent: -50 });
-    $("#dishlist").addEventListener("pointermove", e => { xTo(e.clientX + 170); yTo(e.clientY); });
-    $$(".dish").forEach(d => {
-      d.addEventListener("pointerenter", () => {
-        peekImg.src = d.dataset.img;
-        gsap.to(peek, { opacity: 1, scale: 1, rotate: gsap.utils.random(-5, 5), duration: .35, ease: "back.out(2)" });
-      });
-    });
-    $("#dishlist").addEventListener("pointerleave", () => gsap.to(peek, { opacity: 0, scale: .8, duration: .25 }));
-  }
+  if (!motion) return;
 
   /* ---------- La seule séquence : l'enseigne se peint ---------- */
   document.fonts.ready.then(() => {

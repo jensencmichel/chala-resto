@@ -92,48 +92,59 @@
     <section class="dishes" id="plats" aria-labelledby="plats-title">
       <div class="dishes__inner">
         <h2 class="title title--ink" id="plats-title">Les plats qui ont fait notre nom</h2>
-        <p class="dishes__intro">Chaque plat se commande en petit, moyen ou grand format, avec le riz de votre choix.</p>
+        <p class="dishes__intro">Touchez une assiette pour voir les formats et commander.</p>
 
-        <ul class="dishlist" id="dishlist">
-          <li class="dish" data-img="/img/griot-djondjon.webp">
-            <img class="dish__thumb" src="/img/griot-djondjon.webp" alt="" loading="lazy" />
-            <h3 class="dish__name">Griyo ak diri djondjon</h3>
-            <p class="dish__desc">Porc mariné puis frit, riz noir aux champignons djondjon, bannann peze et pikliz.</p>
-            <p class="dish__price">dès 14,98 $</p>
+        <ul class="plates" id="plates">
+          <li class="plate plate--feature">
+            <button class="plate__btn" type="button" data-img="/img/plats/griot-djondjon.webp" data-name="Griyo ak diri djondjon" data-desc="Porc mariné puis frit, riz noir aux champignons djondjon, bannann peze, salade et pikliz." data-sizes="Petit plat=14,98 $|Grand plat=21,95 $" aria-haspopup="dialog">
+              <img class="plate__img" src="/img/plats/griot-djondjon.webp" alt="Griyo ak diri djondjon" loading="lazy" width="1000" height="760" />
+              <span class="plate__name">Griyo ak diri djondjon</span>
+              <span class="plate__price">dès 14,98 $</span>
+            </button>
           </li>
-          <li class="dish" data-img="/img/poulet-riz-colle.webp">
-            <img class="dish__thumb" src="/img/poulet-riz-colle.webp" alt="" loading="lazy" />
-            <h3 class="dish__name">Poul ak diri kole</h3>
-            <p class="dish__desc">Poulet en sauce créole, riz collé aux pois rouges, salade de macaroni.</p>
-            <p class="dish__price">dès 14,98 $</p>
+          <li class="plate">
+            <button class="plate__btn" type="button" data-img="/img/plats/poulet-riz-colle.webp" data-name="Poul ak diri kole" data-desc="Poulet en sauce créole, riz collé aux pois rouges, salade de macaroni et bannann peze." data-sizes="Moyen=14,98 $|Grand plat=19,98 $" aria-haspopup="dialog">
+              <img class="plate__img" src="/img/plats/poulet-riz-colle.webp" alt="Poul ak diri kole" loading="lazy" width="1000" height="760" />
+              <span class="plate__name">Poul ak diri kole</span>
+              <span class="plate__price">dès 14,98 $</span>
+            </button>
           </li>
-          <li class="dish" data-img="/img/fritay-griot.webp">
-            <img class="dish__thumb" src="/img/fritay-griot.webp" alt="" loading="lazy" />
-            <h3 class="dish__name">Fritay</h3>
-            <p class="dish__desc">Le plateau des fêtes : griot, fritures dorées, bannann peze, pikliz et sauce piquante.</p>
-            <p class="dish__price">dès 14,98 $</p>
+          <li class="plate">
+            <button class="plate__btn" type="button" data-img="/img/plats/fritay-griot.webp" data-name="Fritay griyo" data-desc="Le plateau des fêtes : griot, fritures dorées, bannann peze, pikliz et sauce piquante." data-sizes="Moyen=14,98 $|Grand plat=21,98 $" aria-haspopup="dialog">
+              <img class="plate__img" src="/img/plats/fritay-griot.webp" alt="Fritay griyo" loading="lazy" width="1000" height="760" />
+              <span class="plate__name">Fritay griyo</span>
+              <span class="plate__price">dès 14,98 $</span>
+            </button>
           </li>
-          <li class="dish" data-img="/img/legumes-riz-colle.webp">
-            <img class="dish__thumb" src="/img/legumes-riz-colle.webp" alt="" loading="lazy" />
-            <h3 class="dish__name">Legim</h3>
-            <p class="dish__desc">Légumes haïtiens mijotés avec la viande, sur riz collé ou riz blanc.</p>
-            <p class="dish__price">dès 17,98 $</p>
+          <li class="plate">
+            <button class="plate__btn" type="button" data-img="/img/plats/griot-riz-colle.webp" data-name="Griyo ak diri kole" data-desc="Griot croustillant, riz collé aux pois rouges, macaroni et bananes pesées." data-sizes="Moyen=14,95 $|Grand plat=21,95 $" aria-haspopup="dialog">
+              <img class="plate__img" src="/img/plats/griot-riz-colle.webp" alt="Griyo ak diri kole" loading="lazy" width="1000" height="760" />
+              <span class="plate__name">Griyo ak diri kole</span>
+              <span class="plate__price">dès 14,95 $</span>
+            </button>
           </li>
-          <li class="dish" data-img="/img/riz-blanc-sauce-pois.webp">
-            <img class="dish__thumb" src="/img/riz-blanc-sauce-pois.webp" alt="" loading="lazy" />
-            <h3 class="dish__name">Diri blan, sòs pwa</h3>
-            <p class="dish__desc">Riz blanc, sauce pois noir veloutée et légumes à part.</p>
-            <p class="dish__price">dès 17,98 $</p>
+          <li class="plate">
+            <button class="plate__btn" type="button" data-img="/img/plats/legumes-riz-colle.webp" data-name="Legim" data-desc="Légumes haïtiens mijotés avec la viande, servis sur riz collé ou riz blanc." data-sizes="Moyen=17,98 $|Grand format=21,98 $" aria-haspopup="dialog">
+              <img class="plate__img" src="/img/plats/legumes-riz-colle.webp" alt="Legim" loading="lazy" width="1000" height="760" />
+              <span class="plate__name">Legim</span>
+              <span class="plate__price">dès 17,98 $</span>
+            </button>
           </li>
-          <li class="dish" data-img="/img/fritay-poulet.webp">
-            <img class="dish__thumb" src="/img/fritay-poulet.webp" alt="" loading="lazy" />
-            <h3 class="dish__name">Fritay poul</h3>
-            <p class="dish__desc">Poulet frit bien doré, salade de macaroni, bannann peze et pikliz.</p>
-            <p class="dish__price">dès 14,98 $</p>
+          <li class="plate">
+            <button class="plate__btn" type="button" data-img="/img/plats/fritay-poulet.webp" data-name="Fritay poul" data-desc="Poulet frit bien doré, salade de macaroni, bannann peze et pikliz." data-sizes="Petit moyen=14,98 $|Grand plat=19,98 $" aria-haspopup="dialog">
+              <img class="plate__img" src="/img/plats/fritay-poulet.webp" alt="Fritay poul" loading="lazy" width="1000" height="760" />
+              <span class="plate__name">Fritay poul</span>
+              <span class="plate__price">dès 14,98 $</span>
+            </button>
+          </li>
+          <li class="plate">
+            <button class="plate__btn" type="button" data-img="/img/plats/riz-blanc-sauce-pois.webp" data-name="Diri blan, sòs pwa" data-desc="Riz blanc, sauce pois noir veloutée et légumes à part." data-sizes="Moyen=17,98 $|Grand format=21,98 $" aria-haspopup="dialog">
+              <img class="plate__img" src="/img/plats/riz-blanc-sauce-pois.webp" alt="Diri blan, sòs pwa" loading="lazy" width="1000" height="760" />
+              <span class="plate__name">Diri blan, sòs pwa</span>
+              <span class="plate__price">dès 17,98 $</span>
+            </button>
           </li>
         </ul>
-      </div>
-      <figure class="peek" id="peek" aria-hidden="true"><img src="/img/griot-djondjon.webp" alt="" /></figure>
     </section>
 
     <!-- ============ MENU : panneau peint ============ -->
@@ -206,6 +217,21 @@
       </div>
     </section>
   </main>
+
+
+  <dialog class="sheet" id="sheet" aria-labelledby="sheet-name">
+    <form method="dialog" class="sheet__close-form"><button class="sheet__close" aria-label="Fermer">Fermer</button></form>
+    <img class="sheet__img" id="sheet-img" src="/img/plats/griot-djondjon.webp" alt="" />
+    <div class="sheet__body">
+      <h3 class="sheet__name" id="sheet-name">Plat</h3>
+      <p class="sheet__desc" id="sheet-desc"></p>
+      <table class="sheet__sizes"><tbody id="sheet-sizes"></tbody></table>
+      <div class="sheet__actions">
+        <a class="btn btn--red btn--big" href="https://www.ubereats.com/ca/store/chala-le-gouter-antillais/BpYQt7rVVE6Tbn0yuZUxeQ" target="_blank" rel="noopener">Commander sur Uber Eats</a>
+        <a class="btn btn--line btn--big" href="tel:+15145883708">Appeler pour commander</a>
+      </div>
+    </div>
+  </dialog>
 
   <footer class="foot">
     <div class="bunting bunting--still" aria-hidden="true" data-bunting></div>
